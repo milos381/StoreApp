@@ -1,0 +1,12 @@
+<%= form_for @user do |f| %>
+  <%= f.label 'Your name?' %><br>
+  <%= f.text_field :name %><br>
+  <%= f.label 'Enter your valid gmail address:' %><br>
+  <%= f.text_field :email %><br>
+  <%= f.label 'Create password *note password should be less then 5 characters:' %><br>
+  <%= f.password_field :password %><br>
+  <%= f.label 'How much money does a user have in bank account?' %><br>
+  <%= f.number_field :money %><br>
+
+  <%=  f.submit %>
+<% end %>
