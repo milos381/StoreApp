@@ -1,6 +1,15 @@
-<%= form_for @attraction do |f| %>
+<%= form_for @phone do |f| %>
   <%= f.label 'Phone Make' %><br>
   <%= f.text_field :make %><br>
+  
+  <%= fields_for :model do |model|%>
+
+  <%= f.label 'Phone Model' %><br>
+  <%= model.text_field :name_model %><br>
+  <%= f.label 'Phone Price' %><br>
+  <%= model.number_field :price %><br>
+
+  <%end%>
   <%=  f.submit %>
 <% end %>
-<%= link_to 'Back', phone_path %>
+<%= link_to 'Back', phones_path %>

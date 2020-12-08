@@ -7,7 +7,8 @@ class ModelsController < ApplicationController
     end
     def create
         @model = Model.create(model_params)
-        redirect_to @model
+        @model.phone = Phone.find_or_create_by(phone_params)
+        
     end
     def edit
         @model = Model.find(params[:id])
@@ -16,7 +17,6 @@ class ModelsController < ApplicationController
         @model = Model.find(params[:id])
         if @model.save
           @model.update(model_params)
-          redirect_to @model
         else
           redirect_to edit_model_path(@model)
         end
@@ -26,6 +26,9 @@ class ModelsController < ApplicationController
     end
     private
     def model_params
-        params.require(:model).permit(:model_name, :price)
+        params.require(:model).permit(:name_model, :price)
+    end
+    def phone_params
+        params.require(:phone).permit(:make)
     end
 end

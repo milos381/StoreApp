@@ -1,11 +1,11 @@
     <% @phones.each do |phone| %>
     <tr>
         <td><%= phone.make %></td>
-        <td><%= phone.model.model_name %><br></td>
-        <td><%= phone.model.price %><br></td>
+        
+        
 
-        <td><%= link_to "Continue -> #{phone.make}", phone_path(phone) %></td>
+        <td><%= link_to "Continue ->", phone_path(phone) %></td>
 
     <% end %>
 
-    <%= link_to "Back", user_path(@user) %>
+    

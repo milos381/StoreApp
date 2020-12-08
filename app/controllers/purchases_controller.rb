@@ -1,7 +1,7 @@
 class PurchasesController < ApplicationController
     def create
         purchase = Purchase.create(purchase_params)
-        message = purchase.make_purchase
+        message = purchase.purchase_phone
         redirect_to user_path(purchase.user), flash: { message: message }
       end
     

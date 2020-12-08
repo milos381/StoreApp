@@ -1,9 +1,9 @@
-<h1><%= @phone.name %></h1>
+<h1><%= @phone.make %></h1>
+<h1><%= @mdoel.name_model %></h1>
+<h1><%= @phone.price %></h1>
 
-<label>Phone Model</label><br>
-<%= @phone.model.model_name %><br>
-<label>Phone Price</label><br>
-<%= @phone.model.price %><br>
+
+
 
 <%= form_for @purchase do |f| %>
     <%= f.hidden_field :user_id %><br />

@@ -1,4 +1,5 @@
 class PhonesController < ApplicationController
+
     def index
         @phones = Phone.all
         @user = User.find_by(id: session[:user_id])
@@ -8,11 +9,12 @@ class PhonesController < ApplicationController
     end
     def create
         @phone = Phone.create(phone_params)
+        @model = @phone.models.create(model_params)
         redirect_to @phone
     end
     def edit
         @phone = Phone.find(params[:id])
-        @purchase = @phone.purchase.build(user_id: current_user.id)
+        @purchase = @phone.purchases.build(user_id: current_user.id)
     end
     def update
         @phone = Phone.find(params[:id])
@@ -24,11 +26,18 @@ class PhonesController < ApplicationController
         end
     end
     def show
+        
         @phone = Phone.find(params[:id])
-        @purchase = @phone.purchase.build(user_id: current_user.id)
+        binding.pry
+        @model = @phone.models.find(:phone_id)
+       @purchase = @phone.purchases.build(user_id: current_user.id)
+       
     end
     private
     def phone_params
         params.require(:phone).permit(:make)
+    end
+    def model_params
+        params.require(:model).permit(:name_model, :price)
     end
 end
