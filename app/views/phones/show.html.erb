@@ -1,14 +1,19 @@
 <h1><%= @phone.make %></h1>
-<h1><%= @mdoel.name_model %></h1>
-<h1><%= @phone.price %></h1>
+     <% @phone.models.each do |model|%>
+            <%=model.name_model%>
+            <%=model.price%>
+        <%end%>
 
 
 
-
+  <% if current_user.store_owner %>
+    <%= link_to 'Edit Phone Info', edit_phone_path(@phone) %>
+    <% else %>
 <%= form_for @purchase do |f| %>
     <%= f.hidden_field :user_id %><br />
     <%= f.hidden_field :phone_id %><br />
     <%= f.submit "PURCHASE THIS PHONE"%>
+<% end %>
 <% end %><br>
 
 <%= link_to 'Back', phones_path %>

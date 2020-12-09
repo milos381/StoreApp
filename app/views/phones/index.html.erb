@@ -1,11 +1,19 @@
     <% @phones.each do |phone| %>
     <tr>
+    
         <td><%= phone.make %></td>
-        
-        
-
-        <td><%= link_to "Continue ->", phone_path(phone) %></td>
-
+        <% phone.models.each do |model|%>
+            <%=model.name_model%>
+            <%=model.price%>
+        <%end%>
+      <td><%= link_to "  Continue ->  ", phone_path(phone) %></td><br>
+    </tr>
     <% end %>
+<% if @user.store_owner %>
+  <br><%= link_to 'ADD NEW PHONE', new_phone_path %>
+  <%= link_to "Back", user_path(@user) %>
+<% else %>
+  <%= link_to "Back", user_path(@user) %>
+<% end %>
 
     

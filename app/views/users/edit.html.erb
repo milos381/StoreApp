@@ -1,6 +1,10 @@
+<p><strong><%="NO CHANGES ALLOWED" if @user.store_owner %></strong></p>
+<%if !@user.store_owner%>
 <%= form_for @user do |f| %>
+
   <%= f.label 'How much money does a user have in bank account?' %><br>
   <%= f.number_field :money %><br>
 
   <%=  f.submit %>
 <% end %>
+<%end%>

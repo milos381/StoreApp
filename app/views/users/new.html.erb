@@ -1,3 +1,17 @@
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@user.errors.count, "error") %>
+      prohibited this article from being saved:
+    </h2>
+ 
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 <%= form_for @user do |f| %>
   <%= f.label 'Your name?' %><br>
   <%= f.text_field :name %><br>
@@ -7,6 +21,7 @@
   <%= f.password_field :password %><br>
   <%= f.label 'How much money does a user have in bank account?' %><br>
   <%= f.number_field :money %><br>
-
+  <%= f.label 'Are you a store owner?' %>
+  <%= f.check_box :store_owner %><br>
   <%=  f.submit %>
 <% end %>

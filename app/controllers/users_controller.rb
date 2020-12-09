@@ -2,11 +2,17 @@ class UsersController < ApplicationController
     before_action :logged_in?, except: [:new, :create]
     def new
         @user = User.new
+
     end
     def create
-        @user = User.create(user_params)
-        session[:user_id] = @user.id
-        redirect_to @user
+        @user = User.new(user_params)
+        if @user.valid?
+            @user.save
+            session[:user_id] = @user.id
+            redirect_to @user
+        else
+            render :new
+        end
     end
     def edit
         @user = User.find(params[:id])
@@ -26,6 +32,6 @@ class UsersController < ApplicationController
     end
     private
     def user_params
-        params.require(:user).permit(:name, :email, :password, :money)
+        params.require(:user).permit(:name, :email, :password, :money, :store_owner)
     end
 end

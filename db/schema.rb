@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_12_07_212020) do
     t.string "password_digest"
     t.string "email"
     t.integer "money"
+    t.boolean "store_owner", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

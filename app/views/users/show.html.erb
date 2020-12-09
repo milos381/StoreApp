@@ -1,11 +1,13 @@
 <% if flash[:message] %>
     <p><%= flash[:message] %></p>
 <% end %>
-
-
+<p><strong><%="OWNER" if @user.store_owner %></strong></p>
+<%if !@user.store_owner%>
 <p><strong>Name: </strong><%= @user.name %></p>
 <p><strong>Amount of money available: </strong><%= @user.money %></p>
-<br><br>
 <%= link_to 'Unexpectedly received more money? Click here:', edit_user_path %><br>
+<%end%>
+<br><br>
+
 <%= link_to 'See all available phones', phones_path %><br>
 <%= link_to "Log Out", logout_path, method: :delete %>

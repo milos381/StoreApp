@@ -1,4 +1,5 @@
 class PurchasesController < ApplicationController
+  before_action :logged_in?
     def create
         purchase = Purchase.create(purchase_params)
         message = purchase.purchase_phone

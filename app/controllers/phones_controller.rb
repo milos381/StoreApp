@@ -1,11 +1,12 @@
 class PhonesController < ApplicationController
-
+    before_action :logged_in?
     def index
         @phones = Phone.all
         @user = User.find_by(id: session[:user_id])
     end
     def new
         @phone = Phone.new
+        @user = User.find_by(id: session[:user_id])
     end
     def create
         @phone = Phone.create(phone_params)
@@ -28,8 +29,9 @@ class PhonesController < ApplicationController
     def show
         
         @phone = Phone.find(params[:id])
-        binding.pry
-        @model = @phone.models.find(:phone_id)
+        # binding.pry
+        @model = @phone.models
+        
        @purchase = @phone.purchases.build(user_id: current_user.id)
        
     end
