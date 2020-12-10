@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
   resources :models
   resources :purchases
-  resources :phones
+  resources :phones do
+    resources :models, only: [:index, :show]
+  end
   resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -6,7 +6,7 @@
             <%=model.name_model%>
             <%=model.price%>
         <%end%><br>
-      <td><%= link_to "  Continue ->  ", phone_path(phone) %></td><br>
+      <td><%= link_to "  Continue ->  ", phone_models_path(phone) %></td><br>
     </tr>
     <% end %><br><br>
   <%= "This is our selection of Iphone models:"%><br><br>
@@ -17,7 +17,7 @@
             <%=model.name_model%>
             <%=model.price%>
         <%end%><br>
-        <td><%= link_to "  Continue ->  ", phone_path(phone) %></td><br>
+        <td><%= link_to "  Continue ->  ", phone_models_path(phone) %></td><br>
       </tr>
     <% end %>
 
@@ -28,5 +28,3 @@
  
   <%= link_to "Back", user_path(@user) %>
 <% end %>
-
-    

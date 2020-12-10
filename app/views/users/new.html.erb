@@ -13,11 +13,11 @@
   </div>
 <% end %>
 <%= form_for @user do |f| %>
-  <%= f.label 'Your name?' %><br>
+  <%= f.label 'Your name? *Note, name must be minimum 2 characters:' %><br>
   <%= f.text_field :name %><br>
-  <%= f.label 'Enter your valid gmail address:' %><br>
+  <%= f.label 'Enter your email:' %><br>
   <%= f.text_field :email %><br>
-  <%= f.label 'Create password *note password should be less then 5 characters:' %><br>
+  <%= f.label 'Create password:' %><br>
   <%= f.password_field :password %><br>
   <%= f.label 'How much money does a user have in bank account?' %><br>
   <%= f.number_field :money %><br>

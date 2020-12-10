@@ -1,0 +1,8 @@
+<ul>
+<% @models.each do |model| %>
+  <li><%= model.phone.make %></li>
+  <li><%= model.name_model %></li>
+  <li><%= model.price %></li>
+  <li><%= link_to "BUY NOW", phone_path(model) %></li>
+<% end %>
+</ul>
