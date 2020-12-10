@@ -6,4 +6,6 @@ class Phone < ApplicationRecord
         self.model.name_model
         self.model.price
     end
+    
+    scope :iphone, -> { where(make: "Iphone") }
 end

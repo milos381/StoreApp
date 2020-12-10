@@ -3,6 +3,7 @@ class ModelsController < ApplicationController
     def index
         @models = Model.all
         @user = User.find_by(id: session[:user_id])
+
     end
     def new
         @model = Model.new

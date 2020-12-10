@@ -3,6 +3,7 @@ class PhonesController < ApplicationController
     def index
         @phones = Phone.all
         @user = User.find_by(id: session[:user_id])
+      
     end
     def new
         @phone = Phone.new
