@@ -4,6 +4,10 @@ class UsersController < ApplicationController
         @user = User.new
 
     end
+    def index
+		@users = User.all
+
+	end
     def create
         @user = User.new(user_params)
         if @user.valid?
@@ -28,9 +32,9 @@ class UsersController < ApplicationController
         end
     end
     def show
-        @user = User.find(params[:id])
-        
-    end
+		@user = User.find_by(id: params[:id])
+	end
+    
     private
     def user_params
         params.require(:user).permit(:name, :email, :password, :money, :store_owner)

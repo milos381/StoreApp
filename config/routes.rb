@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root 'welcome#index'
+
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
+  get '/auth/facebook/callback' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
   resources :models
   resources :purchases
