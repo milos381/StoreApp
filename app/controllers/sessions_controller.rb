@@ -20,6 +20,7 @@ class SessionsController < ApplicationController
         u.password = SecureRandom.hex
         u.money = 1000
       end
+      
       session[:user_id] = @user.id
       render 'users/show'
     else
@@ -28,6 +29,7 @@ class SessionsController < ApplicationController
         session[:user_id] = @user.id
         redirect_to @user
       else
+        
         render :new
       end
     end

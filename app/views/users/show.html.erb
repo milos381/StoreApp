@@ -6,7 +6,8 @@
     <%if !@user.store_owner && session[:user_id]%>
     <p><strong>Name: </strong><%= @user.name %></p>
     <p><strong>Amount of money available: </strong><%= @user.money %></p>
-    <%= link_to 'Unexpectedly received more money? Click here:', edit_user_path %><br>
+    
+    <%= link_to 'Unexpectedly received more money? Click here:', edit_user_path(@user) %><br>
     <%end%>
     <br><br>
 
