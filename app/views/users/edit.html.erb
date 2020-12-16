@@ -1,3 +1,18 @@
+<div class = "root">
+<%if !@user.store_owner%>
+<%= form_for @user do |f| %>
+
+  <%= f.label 'How much money does a user have in bank account?' %><br>
+  <%= f.number_field :money %><br>
+
+  <%=  f.submit %>
+  <% end %>
+<%else%>
+<p><strong><%="NO CHANGES ALLOWED" %></strong></p>
+
+<%end%>
+</div>
+<div id = "flash_edit_user">
 <% if @user.errors.any? %>
   <div id="error_explanation">
     <h2>
@@ -12,15 +27,4 @@
     </ul>
   </div>
 <% end %>
-<%if !@user.store_owner%>
-<%= form_for @user do |f| %>
-
-  <%= f.label 'How much money does a user have in bank account?' %><br>
-  <%= f.number_field :money %><br>
-
-  <%=  f.submit %>
-  <% end %>
-<%else%>
-<p><strong><%="NO CHANGES ALLOWED" %></strong></p>
-
-<%end%>
+</div>

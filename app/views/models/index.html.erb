@@ -1,3 +1,4 @@
+<div class = "root">
 <ul>
 <% @models.each do |model| %>
   <li><%= model.phone.make %></li>
@@ -6,3 +7,4 @@
   <li><%= link_to "BUY NOW", phone_path(model) %></li>
 <% end %>
 </ul>
+</div>

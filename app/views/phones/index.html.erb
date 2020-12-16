@@ -1,3 +1,5 @@
+<div class = "phones">
+<div id = "complete_selection_of_phones">
 <%= "This is our complete selection:"%><br><br>
 <% @phones.each do |phone| %>
     <tr>
@@ -6,9 +8,11 @@
             <%=model.name_model%>
             <%=model.price%>
         <%end%><br>
-      <td><%= link_to "  Continue ->  ", phone_models_path(phone) %></td><br>
+      <td><%= link_to "  -continue-  ", phone_models_path(phone) %></td><br><br>
     </tr>
     <% end %><br><br>
+    </div>
+    <div id = "iphone_phones">
   <%= "This is our selection of Iphone models:"%><br><br>
   <% @phones.iphone.each do |phone| %>
     <tr>
@@ -17,14 +21,15 @@
             <%=model.name_model%>
             <%=model.price%>
         <%end%><br>
-        <td><%= link_to "  Continue ->  ", phone_models_path(phone) %></td><br>
+        <td><%= link_to "  -continue-  ", phone_models_path(phone) %></td><br><br>
       </tr>
     <% end %>
-
+</div><br><br>
 <% if @user.store_owner %>
-  <br><%= link_to 'ADD NEW PHONE', new_phone_path %>
-  <%= link_to "Back", user_path(@user) %>
+  <br><%= link_to 'ADD NEW PHONE', new_phone_path %><br><br>
+  <%= link_to "BACK", user_path(@user) %>
 <% else %>
  
-  <%= link_to "Back", user_path(@user) %>
+  <%= link_to "BACK", user_path(@user) %>
 <% end %>
+</div>

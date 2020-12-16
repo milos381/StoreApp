@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     private
   
     def logged_in?
-      redirect_to root_path, alert: "Not authorized" unless !current_user.nil?  
+      redirect_to root_path unless !current_user.nil?  
     end
   
     def current_user

@@ -1,3 +1,20 @@
+
+<div class = "root">
+<%= form_for @user do |f| %>
+  <%= f.label 'Your name? *Note, name must be minimum 2 characters:' %><br><br>
+  <%= f.text_field :name %><br><br>
+  <%= f.label 'Enter your email:' %><br><br>
+  <%= f.text_field :email %><br><br>
+  <%= f.label 'Create password:' %><br><br>
+  <%= f.password_field :password %><br><br>
+  <%= f.label 'How much money does a user have in bank account?' %><br><br>
+  <%= f.number_field :money %><br><br>
+  <%= f.label 'Are you a store owner?' %>
+  <%= f.check_box :store_owner %><br><br>
+  <%=  f.submit %>
+<% end %>
+</div>
+<div id = "flash_new_user">
 <% if @user.errors.any? %>
   <div id="error_explanation">
     <h2>
@@ -12,16 +29,4 @@
     </ul>
   </div>
 <% end %>
-<%= form_for @user do |f| %>
-  <%= f.label 'Your name? *Note, name must be minimum 2 characters:' %><br>
-  <%= f.text_field :name %><br>
-  <%= f.label 'Enter your email:' %><br>
-  <%= f.text_field :email %><br>
-  <%= f.label 'Create password:' %><br>
-  <%= f.password_field :password %><br>
-  <%= f.label 'How much money does a user have in bank account?' %><br>
-  <%= f.number_field :money %><br>
-  <%= f.label 'Are you a store owner?' %>
-  <%= f.check_box :store_owner %><br>
-  <%=  f.submit %>
-<% end %>
+</div>

@@ -1,7 +1,9 @@
-
+<div id = "flash_show_user">
     <% if flash[:message] %>
         <p><%= flash[:message] %></p>
     <% end %>
+</div>
+<div class = "root">
     <p><strong><%="OWNER" if @user.store_owner %></strong></p>
     <%if !@user.store_owner && session[:user_id]%>
     <p><strong>Name: </strong><%= @user.name %></p>
@@ -11,5 +13,6 @@
     <%end%>
     <br><br>
 
-    <%= link_to 'See all available phones', phones_path %><br>
+    <%= link_to 'See all available phones', phones_path %><br><br>
     <%= link_to "Log Out", logout_path, method: :delete %>
+</div>
