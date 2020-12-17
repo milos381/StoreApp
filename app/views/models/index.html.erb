@@ -1,10 +1,9 @@
 <div class = "root">
-<ul>
+
 <% @models.each do |model| %>
-  <li><%= model.phone.make %></li>
-  <li><%= model.name_model %></li>
-  <li><%= model.price %></li>
-  <li><%= link_to "BUY NOW", phone_path(model) %></li>
+  <%= model.phone.make %>
+  <%= model.name_model %><br><br>
+  <%= model.price %><br><br>
+  <%= link_to "       checkout       ", phone_path(model) %>
 <% end %>
-</ul>
 </div>

@@ -1,9 +1,10 @@
+
+<div class = "root">
 <div id = "flash_sessions">
 <% if flash.alert %>
 <%= flash.alert %>
 <%end%>
 </div>
-<div class = "root">
 <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
   <h4>Username</h4>
   <%= collection_select(:user, :name, User.all, :name, :name, prompt: "Please select your username from this dropdown") %><br>

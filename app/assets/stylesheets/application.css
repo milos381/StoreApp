@@ -44,16 +44,12 @@ a {
 }
 #flash_show_user {
     color: red;
-    position: absolute;
     top: 5px;
-    left: 315px
 }
 #flash_new_user {
     color: red;
 }
 #flash_sessions {
     color: red;
-    position: absolute;
     top: 5px;
-    left: 315px
 }

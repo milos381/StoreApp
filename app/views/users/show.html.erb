@@ -1,9 +1,10 @@
+
+<div class = "root">
 <div id = "flash_show_user">
     <% if flash[:message] %>
         <p><%= flash[:message] %></p>
     <% end %>
 </div>
-<div class = "root">
     <p><strong><%="OWNER" if @user.store_owner %></strong></p>
     <%if !@user.store_owner && session[:user_id]%>
     <p><strong>Name: </strong><%= @user.name %></p>
