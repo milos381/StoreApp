@@ -17,6 +17,7 @@ class PhonesController < ApplicationController
     def edit
         @phone = Phone.find(params[:id])
         @purchase = @phone.purchases.build(user_id: current_user.id)
+        @user = current_user
     end
     def update
         @phone = Phone.find(params[:id])
